@@ -20,11 +20,9 @@ export class MainComponent implements OnInit {
     this.money = this.sum(money1, money2)
     console.log(this.money);
 
-
-
     this.form = fb.group({
       'number1': ['',],
-      'number2': ['',]
+      'number2': ['',],
     })
     
   }
@@ -33,9 +31,8 @@ export class MainComponent implements OnInit {
   }
 
   send():void{ 
-    let result = this.sum(this.form.controls['number1'].value, this.form.controls['number2'].value);
-    console.log(result)
-    
+    let result = this.sum(this.form.controls['number1'].value, this.form.controls['number2'].value);  
+    console.log(result) 
   }
 
 
