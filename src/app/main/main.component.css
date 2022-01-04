@@ -1,0 +1,9 @@
+.main{
+    padding: 50px;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid black;
+    height: 500px;
+}

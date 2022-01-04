@@ -1,1 +1,12 @@
-<p>main works!</p>
+<div class="main">
+    <div class="container">
+        <div class="form-container">
+            <form (ngSubmit)="send()" [formGroup]='form'>
+                <input type="text" class="form-control" placeholder="Inserisci Primo Numero" formControlName='number1'>
+                <input type="text" class="form-control" placeholder="Inserisci Secondo Numero" formControlName='number2'>
+    
+                <input type="submit" value="calcola">
+            </form>
+        </div>
+    </div>
+</div>

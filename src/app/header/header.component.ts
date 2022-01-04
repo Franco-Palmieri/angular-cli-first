@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   listNav: string[] = ['Home', 'About', 'Contacts']
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
   }
