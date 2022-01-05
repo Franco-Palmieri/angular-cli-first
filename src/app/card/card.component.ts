@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Meal } from '../models/meal.model';
 
 @Component({
   selector: 'app-card',
@@ -10,7 +11,12 @@ import { Observable } from 'rxjs';
 export class CardComponent implements OnInit {
 
   loading: Boolean = false;
-  constructor(public http: HttpClient) { }
+  
+  meals: Meal[] = new Array();
+
+  constructor(public http: HttpClient) {
+
+   }
 
   /*Fa la chiamata e sottoscrive all'observable che mi ritorna come risposta, una callback, che si attiva solo quando
   l'observable riceve la risposta e con il metodo subscribe va ad attivare la callback
@@ -44,8 +50,9 @@ export class CardComponent implements OnInit {
   }
   loadMeals():void{
     this.loading = true;
-    this.http.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood').subscribe(res =>{
-      console.log(res)
+    this.http.get<Meal[]>('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood').subscribe(res =>{
+      this.meals = res;
+      console.log(this.meals)
       this.loading = false;
     });
   }
