@@ -9,6 +9,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class MainComponent implements OnInit {
 
   money: number;
+  
   selectField: FormControl = new FormControl();
 
   form: FormGroup;
@@ -30,7 +31,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  send():void{ 
+  send(){ 
     let result = this.sum(this.form.controls['number1'].value, this.form.controls['number2'].value);  
     console.log(result) 
   }
