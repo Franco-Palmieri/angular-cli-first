@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class CardComponent implements OnInit {
 
+  loading: Boolean = false;
   constructor(public http: HttpClient) { }
 
   /*Fa la chiamata e sottoscrive all'observable che mi ritorna come risposta, una callback, che si attiva solo quando
@@ -42,8 +43,10 @@ export class CardComponent implements OnInit {
     this.loadMeals();
   }
   loadMeals():void{
+    this.loading = true;
     this.http.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood').subscribe(res =>{
       console.log(res)
+      this.loading = false;
     });
   }
 }
