@@ -1,0 +1,24 @@
+.posts-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.box-post{
+    width: calc(100% / 3);
+    height: 300px;
+    padding: 10px;
+}
+.content-post{
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}
+.title{
+    width: 100%;
+}

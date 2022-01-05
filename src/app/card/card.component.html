@@ -1,2 +1,13 @@
-<p *ngIf="loading">LOADING REQUEST HTTP..</p>
+<div class="posts-container">
+    <p *ngIf="loading">LOADING REQUEST HTTP..</p>
+
+
+    <div class="box-post" *ngFor="let p of posts">
+        <div class="content-post">
+            <h5 class="title">{{p.title}}</h5>
+
+            <p>{{p.body}}</p>
+        </div>
+    </div>
+</div>
 

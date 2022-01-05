@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Meal } from '../models/meal.model';
+import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-card',
@@ -12,7 +12,7 @@ export class CardComponent implements OnInit {
 
   loading: Boolean = false;
   
-  meals: Meal[] = new Array();
+  posts: Post[] = new Array();
 
   constructor(public http: HttpClient) {
 
@@ -50,9 +50,9 @@ export class CardComponent implements OnInit {
   }
   loadMeals():void{
     this.loading = true;
-    this.http.get<Meal[]>('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood').subscribe(res =>{
-      this.meals = res;
-      console.log(this.meals)
+    this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts').subscribe(res =>{
+      this.posts = res;
+      console.log(this.posts)
       this.loading = false;
     });
   }
