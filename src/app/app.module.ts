@@ -8,7 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { Page404Component } from './page404/page404.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component'
     HeaderComponent,
     MainComponent,
     CardComponent,
-    HomeComponent
+    HomeComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
