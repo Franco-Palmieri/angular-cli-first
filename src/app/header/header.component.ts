@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  listNav: string[] = ['Home', 'About', 'Contacts']
+  // listNav: string[] = ['Home', 'About', 'Contacts']
   constructor() { 
     
   }

@@ -1,7 +1,9 @@
 <div id="header">
     <nav>
         <ul>
-            <li *ngFor="let i of listNav"><a href="#">{{i}}</a></li>
+            <li><a href="javascript:void(0)" [routerLink]="['/home']">Home</a></li>
+            <li><a href="javascript:void(0)" [routerLink]="['/']">About</a></li>
+            <li><a href="javascript:void(0)">Contacts</a></li>
         </ul>
     </nav>
 </div>
