@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http'
+import { stringify } from '@angular/compiler/src/util';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post.model';
@@ -9,12 +10,11 @@ import { Post } from '../models/post.model';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-
-  @Input() Pippo: string[];
   
   loading: Boolean = false;
 
   posts: Post[] = new Array();
+  //posts: Array<Post> = new Array();
 
   constructor(public http: HttpClient) {
 
@@ -49,6 +49,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadMeals();
+    this.loadId(1);
   }
   loadMeals():void{
     this.loading = true;
@@ -57,5 +58,23 @@ export class CardComponent implements OnInit {
       // console.log(this.posts)
       this.loading = false;
     });
+  }
+
+  loadId(id: Number):void{
+    this.loading = true;
+    this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts/'+id).subscribe(res =>{
+      //console.log(res)
+      this.loading = false;
+    });
+  }
+  createPost(ID: Number, USERID: Number, TITLE: string, BODY: string){
+    this.http.post('https://jsonplaceholder.typicode.com/posts', {
+      userId: USERID,
+      id: ID,
+      title: TITLE,
+      body: BODY
+    }).subscribe(res =>{
+      console.log(res)
+    })
   }
 }

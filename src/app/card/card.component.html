@@ -1,7 +1,9 @@
 <div class="posts-container">
     <p *ngIf="loading">LOADING REQUEST HTTP..</p>
 
-    <div *ngFor="let nome of Pippo">{{nome}}</div>
+    <div>
+        <button id="searchButton" (click)="createPost(200, 101, 'titolo bello', 'body fantasticissimo')">Crea</button>
+    </div>
 
     <div class="box-post" *ngFor="let post of posts">
         <div class="content-post" [routerLink]="['/singlecard', post.id]">
