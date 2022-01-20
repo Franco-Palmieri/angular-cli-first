@@ -5,8 +5,10 @@
         <button id="searchButton" (click)="createPost(200, 101, 'titolo bello', 'body fantasticissimo')">Crea</button>
     </div>
 
+    <h3 style="width: 100%;" *ngIf="post != null">Post : {{post.title}} - ID: {{post.id}}</h3>
+
     <div class="box-post" *ngFor="let post of posts">
-        <div class="content-post" [routerLink]="['/singlecard', post.id]">
+        <div class="content-post" [routerLink]="['/singlecard', post.id]" style="cursor: pointer;">
             <h5 class="title">{{post.title}}</h5>
 
             <p>{{post.body}}</p>

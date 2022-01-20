@@ -3,6 +3,7 @@ import { stringify } from '@angular/compiler/src/util';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post.model';
+import { singlePost } from '../models/singlepost.model';
 
 @Component({
   selector: 'app-card',
@@ -14,6 +15,8 @@ export class CardComponent implements OnInit {
   loading: Boolean = false;
 
   posts: Post[] = new Array();
+
+  post: singlePost;
   //posts: Array<Post> = new Array();
 
   constructor(public http: HttpClient) {
@@ -62,8 +65,9 @@ export class CardComponent implements OnInit {
 
   loadId(id: Number):void{
     this.loading = true;
-    this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts/'+id).subscribe(res =>{
-      //console.log(res)
+    this.http.get<singlePost>('https://jsonplaceholder.typicode.com/posts/'+id).subscribe(res =>{
+      console.log('questo è loadId', res)
+      this.post = res;
       this.loading = false;
     });
   }
