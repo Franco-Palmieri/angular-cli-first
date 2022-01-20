@@ -8,11 +8,14 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class MainComponent implements OnInit {
 
+  Pippo: string[] = ['ciccio', 'coso'];
+  
   money: number;
   
   selectField: FormControl = new FormControl();
 
   form: FormGroup;
+
 
   constructor(public fb: FormBuilder) { 
 

@@ -9,7 +9,8 @@ import { MainComponent } from './main/main.component';
 import { CardComponent } from './card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { Page404Component } from './page404/page404.component'
+import { Page404Component } from './page404/page404.component';
+import { SinglecardComponent } from './singlecard/singlecard.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Page404Component } from './page404/page404.component'
     MainComponent,
     CardComponent,
     HomeComponent,
-    Page404Component
+    Page404Component,
+    SinglecardComponent
   ],
   imports: [
     BrowserModule,

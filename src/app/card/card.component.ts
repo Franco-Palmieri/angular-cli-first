@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post.model';
 
@@ -10,8 +10,10 @@ import { Post } from '../models/post.model';
 })
 export class CardComponent implements OnInit {
 
-  loading: Boolean = false;
+  @Input() Pippo: string[];
   
+  loading: Boolean = false;
+
   posts: Post[] = new Array();
 
   constructor(public http: HttpClient) {
@@ -52,7 +54,7 @@ export class CardComponent implements OnInit {
     this.loading = true;
     this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts').subscribe(res =>{
       this.posts = res;
-      console.log(this.posts)
+      // console.log(this.posts)
       this.loading = false;
     });
   }

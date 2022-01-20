@@ -1,5 +1,6 @@
 <div class="main">
     <div class="container">
+        <h1>Questo è l'About</h1>
         <div class="form-container">
             <form (ngSubmit)="send()" [formGroup]='form'>
                 <input type="number" class="form-control" placeholder="Inserisci Primo Numero" formControlName='number1'>
@@ -8,6 +9,7 @@
                 <input type="submit" value="calcola">
             </form>
         </div>
-        <app-card></app-card>
+        
+        <app-card [Pippo]="Pippo"></app-card>
     </div>
 </div>

@@ -1,13 +1,13 @@
 <div class="posts-container">
     <p *ngIf="loading">LOADING REQUEST HTTP..</p>
 
+    <div *ngFor="let nome of Pippo">{{nome}}</div>
 
-    <div class="box-post" *ngFor="let p of posts">
-        <div class="content-post">
-            <h5 class="title">{{p.title}}</h5>
+    <div class="box-post" *ngFor="let post of posts">
+        <div class="content-post" [routerLink]="['/singlecard', post.id]">
+            <h5 class="title">{{post.title}}</h5>
 
-            <p>{{p.body}}</p>
+            <p>{{post.body}}</p>
         </div>
     </div>
 </div>
-
