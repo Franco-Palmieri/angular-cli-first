@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Subject } from 'rxjs';
 
 
 @Component({
@@ -10,17 +11,22 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 
 export class SinglecardComponent implements OnInit {
-  id: number;
-  title: string;
 
-  constructor(public route: ActivatedRoute) {
+  postID: string;
+  post: any;
+
+  constructor(public route: ActivatedRoute, public http: HttpClient) {
       this.route.paramMap.subscribe((params: ParamMap)=>{
-      this.title = params.get('id')
+      this.postID = params.get('id')
      })
+     this.http.get('https://jsonplaceholder.typicode.com/posts/' + this.postID).subscribe(res =>{
+      this.post = res
+     })
+
 
    }
 
   ngOnInit(): void {
-    
   }
+
 }
